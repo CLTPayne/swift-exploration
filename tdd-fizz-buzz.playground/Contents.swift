@@ -20,6 +20,12 @@ class FizzBuzzTests: XCTestCase {
     
     func testMultiplesOfThreeAndFive() {
         XCTAssertEqual(fizz?.buzz(number: 15), "FizzBuzz")
+        XCTAssertEqual(fizz?.buzz(number: 30), "FizzBuzz")
+    }
+    
+    func testNotMultiplesOfThreeOrFive() {
+        XCTAssertEqual(fizz?.buzz(number: 11), "11")
+        XCTAssertEqual(fizz?.buzz(number: 7), "7")
     }
 }
 

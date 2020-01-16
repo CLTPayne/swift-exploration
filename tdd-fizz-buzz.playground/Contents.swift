@@ -10,12 +10,20 @@ class FizzBuzzTests: XCTestCase {
     
     func testMultiplesOfThree() {
         XCTAssertEqual(fizz?.buzz(number: 3), "Fizz")
+        XCTAssertEqual(fizz?.buzz(number: 12), "Fizz")
+    }
+    
+    func testMultiplesOfFive() {
+        XCTAssertEqual(fizz?.buzz(number: 5), "Buzz")
+        XCTAssertEqual(fizz?.buzz(number: 20), "Buzz")
     }
 }
 
 class Fizz: NSObject {
     func buzz(number: Int) -> String? {
-        if number % 3 == 0 {
+        if number % 5 == 0 {
+            return "Buzz"
+        } else if number % 3 == 0 {
             return "Fizz"
         } else {
             return nil
@@ -25,3 +33,4 @@ class Fizz: NSObject {
 
 FizzBuzzTests.defaultTestSuite.run()
 
+// Command to run the suite - ⌘ + ⇧ + C
